@@ -1,0 +1,41 @@
+.user-edit-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.edit-user-heading {
+  margin-bottom: 20px;
+}
+
+.user-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  flex: 1;
+}
+
+.update-button {
+  flex: 1;
+}
+
+/* Animation */
+.fadeInOut {
+  transition: opacity 0.5s;
+}
+
+.fadeInOut.ng-enter,
+.fadeInOut.ng-leave {
+  opacity: 0;
+}

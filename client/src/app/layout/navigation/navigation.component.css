@@ -1,8 +1,56 @@
+.nav-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.brand-container {
+  margin-left: 20px;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
-#menu-item button {
-  display: block;
-  margin: 0 auto;
+.user-info {
+  margin-right: 20px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.action-buttons {
+  display: flex;
+}
+
+.example-icon {
+  margin-left: 10px;
+}
+
+.profile-button {
+  margin-left: 10px;
+}
+
+.profile-menu {
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInOut {
+  animation: fadeIn 0.5s ease;
 }

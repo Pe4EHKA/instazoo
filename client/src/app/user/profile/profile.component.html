@@ -7,15 +7,22 @@
 
   <div style="padding-top: 2rem" class="row">
     <div class="col">
-      <img class="profile-image" [src]="previewImgURL || formatImage(userProfileImage) || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'" alt="user image">
+      <div class="image-container">
+        <img class="profile-image" [src]="previewImgURL || formatImage(userProfileImage) || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'" alt="user image">
+        <div class="overlay" *ngIf="selectedFile || previewImgURL">
+          <button mat-icon-button (click)="fileInput.click()">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
 
       <input type="file"
              style="display: none"
              #fileInput
              (change)="onFileSelected($event)">
 
-      <button mat-button (click)="fileInput.click()">Pick File</button>
-      <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+      <button mat-button class="file-button" (click)="fileInput.click()">Pick File</button>
+      <button mat-button class="upload-button" *ngIf="selectedFile" (click)="onUpload()">Upload</button>
     </div>
     <div class="col" style="text-align: left">
 

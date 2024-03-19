@@ -6,11 +6,20 @@ import {UserService} from '../../service/user.service';
 import {CommentService} from '../../service/comment.service';
 import {NotificationService} from '../../service/notification.service';
 import {ImageUploadService} from '../../service/image-upload.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
+  animations: [
+    trigger('fadeInAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class IndexComponent implements OnInit {
 
@@ -20,6 +29,7 @@ export class IndexComponent implements OnInit {
   isUserDataLoaded = false;
   // @ts-ignore
   user: User;
+  selectedImage: any;
 
   constructor(private postService: PostService,
               private userService: UserService,
@@ -111,4 +121,7 @@ export class IndexComponent implements OnInit {
     return 'data:image/jpeg;base64,' + img;
   }
 
+  openFullScreenImage(image: any): void {
+    this.selectedImage = image;
+  }
 }

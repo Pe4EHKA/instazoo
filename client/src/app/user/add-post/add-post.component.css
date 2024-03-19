@@ -1,6 +1,46 @@
+.add-post-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: right;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 .post-image {
   display: block;
-  margin: 1rem auto;
   width: 200px;
   height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.button-container {
+  text-align: right;
+}
+
+/* Animation */
+.fadeInOut {
+  transition: opacity 0.5s;
+}
+
+.fadeInOut.ng-enter,
+.fadeInOut.ng-leave {
+  opacity: 0;
+}
+
+.fadeInOut.ng-enter-active,
+.fadeInOut.ng-leave-active {
+  opacity: 1;
 }

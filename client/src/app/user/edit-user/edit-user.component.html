@@ -1,28 +1,24 @@
-<div>
-  <h2>Edit User Profile</h2>
-  <form [formGroup]="profileEditForm">
+<div class="user-edit-container" [@fadeInOut]>
+  <h2 class="edit-user-heading">Edit User Profile</h2>
+  <form [formGroup]="profileEditForm" class="user-edit-form">
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>First name</mat-label>
-      <input matInput
-             formControlName="firstName">
+      <input matInput formControlName="firstName">
     </mat-form-field>
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Last name</mat-label>
-      <input matInput
-             formControlName="lastName">
+      <input matInput formControlName="lastName">
     </mat-form-field>
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Biography</mat-label>
-      <input matInput
-             formControlName="bio">
+      <textarea matInput formControlName="bio" rows="4"></textarea>
     </mat-form-field>
 
-    <div class="row">
-      <button (click)="closeDialog()" class="w-50"
-              mat-button mat-dialog-close disableRipple>
+    <div class="button-container">
+      <button (click)="closeDialog()" mat-button mat-dialog-close disableRipple class="cancel-button">
         Cancel
       </button>
-      <button color="primary" class="w-50" [disabled]="profileEditForm.invalid" (click)="submit()" mat-button disableRipple>
+      <button color="primary" class="update-button" [disabled]="profileEditForm.invalid" (click)="submit()" mat-button disableRipple>
         Update
       </button>
     </div>

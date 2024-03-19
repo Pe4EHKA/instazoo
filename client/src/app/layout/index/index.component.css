@@ -1,20 +1,106 @@
 .index-page {
-  display: block;
-  margin: 0 auto;
-  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding-top: 3rem;
 }
 
 .post-card {
-  display: block;
-  margin: 2rem auto;
-  width: 80%;
+  width: 300px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-.is-liked {
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.mat-card-header-text {
+  margin-bottom: 8px;
+}
+
+.mat-card-subtitle {
+  color: #666;
+}
+
+.mat-card-content {
+  padding: 16px;
+}
+
+.mat-card-actions {
+  padding: 8px 16px;
+}
+
+.comment {
+  margin-bottom: 4px;
+}
+
+.comment-username {
+  font-weight: 500;
+}
+
+.comment-input {
+  margin-top: 8px;
+}
+
+.mat-icon-button {
+  color: grey;
+  transition: color 0.3s ease-in-out;
+}
+
+.mat-icon-button:hover {
   color: darkred;
 }
 
+.is-liked {
+  color: #e91e63;
+}
+
 .not-liked {
-  color: grey;
+  color: #666;
+}
+
+
+/* index.component.css */
+.full-screen-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.full-screen-image-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto; /* добавляем возможность прокрутки */
+}
+
+.full-screen-image-container img {
+  max-width: 100%;
+  /* удалите максимальную высоту изображения, чтобы оно могло быть больше контейнера */
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
 }
